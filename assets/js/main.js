@@ -1,9 +1,8 @@
 (function ($) {
     "use strict";
-   
-    
-    new WOW().init();  
-    
+
+    if (typeof WOW !== 'undefined') { new WOW().init(); }
+
 	$(window).on('load', function () {
 		dataBackgroundImage();
 	});
@@ -214,22 +213,25 @@
     /*--
     Magnific Popup
     ------------------------*/
-    $('.img-popup').magnificPopup({
-        type: 'image',
-        gallery: {
-            enabled: true
-        }
-    });
-    // Magnific Popup Video
-    $('.popup-youtube').magnificPopup({
-        type: 'iframe',
-        removalDelay: 300,
-        mainClass: 'mfp-fade'
-    });
+    if (typeof $.fn.magnificPopup !== 'undefined') {
+        $('.img-popup').magnificPopup({
+            type: 'image',
+            gallery: {
+                enabled: true
+            }
+        });
+        // Magnific Popup Video
+        $('.popup-youtube').magnificPopup({
+            type: 'iframe',
+            removalDelay: 300,
+            mainClass: 'mfp-fade'
+        });
+    }
 
     /* ---
        payment-accordion
     * --------------------------------*/ 
+    if (typeof $.fn.collapse === 'function') {
         $(".payment-accordion").collapse({
             accordion:true,
           open: function() {
@@ -239,27 +241,33 @@
             this.slideUp(550);
           }		
         });
+    }
     
     /*--------------------------
         Counter Up
-    ---------------------------- */	
+    ---------------------------- */
+    if (typeof $.fn.counterUp !== 'undefined') {
         $('.counter-active').counterUp({
             delay: 70,
             time: 5000
-        }); 
+        });
+    }
     
     
     /*---------------------------
         Fancybox Active
     ------------------------------- */	   
-    $('[data-fancybox="images"]').fancybox({
-        hash: false,
-    });
+    if (typeof $.fn.fancybox !== 'undefined') {
+        $('[data-fancybox="images"]').fancybox({
+            hash: false,
+        });
+    }
     
  
     
     /*=============  Gallery Mesonry Activation  ==============*/
-    $('.masonry__wrap').imagesLoaded(function () {
+    if (typeof $.fn.imagesLoaded !== 'undefined') {
+        $('.masonry__wrap').imagesLoaded(function () {
 
         // filter items on button click
         $('.gallery__menu').on('click', 'button', function () {
@@ -291,7 +299,7 @@
               columnWidth: '.gallery__item',
             }
         });
-    });
+    })
 
     
     
@@ -299,11 +307,13 @@
     /*--
         ScrollUp Active
     ------------------------*/
-    $.scrollUp({
-        scrollText: '<i class="zmdi zmdi-long-arrow-up"></i>',
-        easingType: 'linear',
-        scrollSpeed: 900,
-        animation: 'fade'
-    });   
-    
-})(jQuery);	
+    if (typeof $.scrollUp !== 'undefined') {
+        $.scrollUp({
+            scrollText: '<i class="zmdi zmdi-long-arrow-up"></i>',
+            easingType: 'linear',
+            scrollSpeed: 900,
+            animation: 'fade'
+        });
+    }
+
+})(jQuery);

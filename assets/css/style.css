@@ -6078,3 +6078,108 @@ a[href^="mailto:"]:hover {
   .main-menu ul > li { padding: 28px 0; }
   .main-menu ul > li > a { font-size: 14px; padding: 0 18px; }
 }
+
+/* ==============================================
+   KALIAMMAL COLLEGE – QUALITY PASS ADDITIONS
+   Responsive fixes, accessibility & polish.
+   ============================================== */
+
+/* ── 1. Container: replace fixed-pixel mobile widths with fluid ─── */
+@media only screen and (max-width: 767px) {
+  .container {
+    width: auto;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .container {
+    width: auto;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* ── 2. Prevent horizontal overflow on small screens ───────────── */
+@media only screen and (max-width: 991px) {
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+}
+
+/* ── 3. Footer link hover states ──────────────────────────────── */
+.footer-list li a {
+  color: rgba(255, 255, 255, 0.85);
+  -webkit-transition: color 0.2s ease;
+          transition: color 0.2s ease;
+}
+.footer-list li a:hover {
+  color: #07BF51;
+}
+
+/* ── 4. Sub-menu: anchor to left edge of parent item ──────────── */
+.main-menu ul > li .sub-menu {
+  left: 0;
+}
+
+/* ── 5. Accessibility: visible focus ring ─────────────────────── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #07BF51;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── 7. Skip to main content link (keyboard/screen reader users) ─ */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 100000;
+  padding: 8px 16px;
+  background: #07BF51;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+  -webkit-transition: top 0.2s;
+          transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid #003a6a;
+  outline-offset: 2px;
+}
+
+/* ── 8. Footer social icon hover color ────────────────────────── */
+.footer-social-link li a {
+  -webkit-transition: color 0.2s ease, opacity 0.2s ease;
+          transition: color 0.2s ease, opacity 0.2s ease;
+}
+.footer-social-link li a:hover {
+  color: #07BF51;
+  opacity: 1;
+}
+
+/* ── 6. Print styles: hide nav and interactive chrome ─────────── */
+@media print {
+  .header-area,
+  .mobile-menu,
+  .hero-slider,
+  #scrollUp,
+  .kcoe-modal-overlay {
+    display: none !important;
+  }
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+}
