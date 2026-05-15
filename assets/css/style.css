@@ -2022,7 +2022,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #07BF51;
 }
 .main-menu ul > li .sub-menu {
-  width: 220px;
+  width: 260px;
   border: 2px solid #f1f1f1;
   position: absolute;
   background: #fff;
@@ -2403,7 +2403,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .hero-slider-active .owl-prev::after, .hero-slider-active .owl-next::after {
-  content: "ï‹º";
+  content: "‹";
   font-family: Material-Design-Iconic-Font;
   left: 0;
   color: #fff;
@@ -2431,7 +2431,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   left: auto;
 }
 .hero-slider-active .owl-next::after {
-  content: "ï‹»";
+  content: "›";
   right: 0;
 }
 .hero-slider-active:hover .owl-next {
@@ -3667,6 +3667,37 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .testimonial-active .owl-dots .owl-dot.active {
   background: #242c42;
 }
+.testimonials-area .owl-nav {
+  text-align: center;
+  margin-top: 20px;
+}
+.testimonials-area .owl-prev,
+.testimonials-area .owl-next {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: #1a3c6e !important;
+  color: #fff !important;
+  border-radius: 50%;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  margin: 0 6px;
+  padding: 0 !important;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+.testimonials-area .owl-prev:hover,
+.testimonials-area .owl-next:hover {
+  background: #07BF51 !important;
+}
+.testimonials-area .owl-prev.disabled,
+.testimonials-area .owl-next.disabled {
+  opacity: 0.4;
+  cursor: default;
+}
 
 /*testimonial Style 2 CSS*/
 .single-testimonial.testimonial-style-2 {
@@ -4053,9 +4084,11 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #999;
   border-radius: 5px;
 }
-.register-wrap .submit-button > a {
+.register-wrap .submit-button > a,
+.register-wrap .submit-button > button {
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  display: block;
   width: 100%;
   background: #07BF51;
   text-align: center;
@@ -4063,8 +4096,13 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   padding: 10px;
   border-radius: 5px;
   letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
 }
-.register-wrap .submit-button > a:hover {
+.register-wrap .submit-button > a:hover,
+.register-wrap .submit-button > button:hover {
   background: #222222;
 }
 
@@ -5557,6 +5595,23 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border: 1px solid #ebebeb;
   padding: 30px;
 }
+
+/* ==============================================
+   Click-to-Call & Click-to-Mail global styling
+   Preserves institutional appearance; links
+   inherit parent color so no visual disruption.
+   ============================================== */
+a[href^="tel:"],
+a[href^="mailto:"] {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+a[href^="tel:"]:hover,
+a[href^="mailto:"]:hover {
+  text-decoration: underline;
+  opacity: 0.82;
+}
 .dashboard-content h3 {
   border-bottom: 1px solid #ebebeb;
   font-size: 20px;
@@ -5929,7 +5984,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 
   /* Dropdown containers */
-  .main-menu ul > li .sub-menu { width: 220px; padding: 10px 0; }
+  .main-menu ul > li .sub-menu { width: 260px; padding: 10px 0; }
   .main-menu ul > li .sub-menu li { padding: 0; border-bottom: 1px solid #f5f5f5; }
   .main-menu ul > li .sub-menu li:last-child { border-bottom: none; }
   .main-menu ul > li .sub-menu li > a { padding: 8px 16px; font-size: 13px; line-height: 1.5; display: block; }

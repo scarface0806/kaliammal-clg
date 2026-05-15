@@ -112,15 +112,24 @@
     });
 
     /*--
-        Testimonial Active
+        Testimonial Active (Register Now / two-wrap area - no nav arrows)
     ---------------------------*/
-    var testimonialActive = $('.testimonial-active');
-    testimonialActive.owlCarousel({
+    $('.testimonial-two-wrap .testimonial-active').owlCarousel({
         items: 1,
         loop: true,
         nav: false,
-        dots:true,
-        navText: ['','']
+        dots: true
+    });
+
+    /*--
+        Alumni Testimonials carousel (with nav arrows)
+    ---------------------------*/
+    $('.testimonials-area .testimonial-active').owlCarousel({
+        items: 1,
+        loop: true,
+        nav: true,
+        dots: true,
+        navText: ['<i class="zmdi zmdi-chevron-left"></i>', '<i class="zmdi zmdi-chevron-right"></i>']
     });
     
     /*--
