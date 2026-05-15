@@ -299,11 +299,9 @@
               columnWidth: '.gallery__item',
             }
         });
-    })
+    });
+    }
 
-    
-    
-    
     /*--
         ScrollUp Active
     ------------------------*/
